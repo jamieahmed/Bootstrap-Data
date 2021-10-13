@@ -32,22 +32,16 @@ const cardContainer = document.querySelector("#card-container")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-swiftBtn.addEventListener("click", () => {
-  const newTaylorQuote = {
-    artist: "T-Swift",
-    text: getRandomTaylorQuote(),
-  }
-  quotes.push(newTaylorQuote)
-  console.log(quotes);
-})
-
-yeezyBtn.addEventListener("click", () => {
-  const newKanyeQuote = {
-    artist: "Kanye",
-    text: getRandomKanyeQuote(),
-  }
-  quotes.push(newKanyeQuote)
-  console.log(quotes);
-})
+swiftBtn.addEventListener("click", createQuote)
+yeezyBtn.addEventListener("click", createQuote)
 
 /*-------------------------------- Functions --------------------------------*/
+
+function createQuote(evt) {
+  const newQuote = {
+    artist: evt.target.id === "swift-button" ? "T-Swift" : "Yeezy",
+    text: evt.target.id === "swift-button" ? getRandomTaylorQuote() : getRandomKanyeQuote(),
+  }
+  quotes.push(newQuote)
+  console.log(quotes)
+}
