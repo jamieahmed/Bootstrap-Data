@@ -44,4 +44,31 @@ function createQuote(evt) {
   }
   quotes.push(newQuote)
   console.log(quotes)
+  render()
+}
+
+function render() {
+  cardContainer.innerHTML = ""
+  quotes.forEach((quote) => {
+    appendQuote(quote)
+  })
+}
+
+function appendQuote(quote) {
+  // quote looks like: {
+  //   artist: evt.target.id === "swift-button" ? "T-Swift" : "Yeezy",
+  //   text: evt.target.id === "swift-button" ? getRandomTaylorQuote() : getRandomKanyeQuote(),
+  // }
+  let quoteCard = document.createElement("div")
+  quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
+  quoteCard.innerHTML =
+  `<div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>${quote.text}</p>
+      <footer class="blockquote-footer text-end artist-name">
+        ${quote.artist}
+      </footer>
+    </blockquote>
+  </div>`
+  cardContainer.appendChild(quoteCard)
 }
