@@ -22,7 +22,7 @@ import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes.js"
 
 /*-------------------------------- Variables --------------------------------*/
 
-
+const quotes = []
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -33,11 +33,21 @@ const cardContainer = document.querySelector("#card-container")
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", () => {
-  console.log(getRandomTaylorQuote())
+  const newTaylorQuote = {
+    artist: "T-Swift",
+    text: getRandomTaylorQuote(),
+  }
+  quotes.push(newTaylorQuote)
+  console.log(quotes);
 })
 
 yeezyBtn.addEventListener("click", () => {
-  console.log(getRandomKanyeQuote())
+  const newKanyeQuote = {
+    artist: "Kanye",
+    text: getRandomKanyeQuote(),
+  }
+  quotes.push(newKanyeQuote)
+  console.log(quotes);
 })
 
 /*-------------------------------- Functions --------------------------------*/
