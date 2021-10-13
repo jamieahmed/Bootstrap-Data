@@ -9,8 +9,8 @@
 // // - Create a test ‘card’ element with Bootstrap
 // // - Create a render function
 // // - Add a function to handle appending a ‘card’ containing the quote to the container element.
-// - Style each card differently, based on whether the quote is from T-Swift or Yeezy. (What options do we have to handle this?)
-// - Add a button to the card that will allow us to REMOVE the quote from the list. (What are some approaches we can take to do this?)
+// // - Style each card differently, based on whether the quote is from T-Swift or Yeezy. (What options do we have to handle this?)
+// // - Add a button to the card that will allow us to REMOVE the quote from the list. (What are some approaches we can take to do this?)
 // - Add responsive design
 // - Add Google Fonts
 // - Add Light/Dark Mode
@@ -47,18 +47,23 @@ function createQuote(evt) {
   render()
 }
 
+function deleteQuote(evt) {
+  // evt.target.id is delete-btn-1
+  const idx = evt.target.id.replace("delete-btn-", "")
+  // idx is 1
+  quotes.splice(idx, 1)
+  render()
+}
+
 function render() {
   cardContainer.innerHTML = ""
   quotes.forEach((quote, idx) => {
     appendQuote(quote, idx)
   })
+  addDeleteBtnListeners()
 }
 
 function appendQuote(quote, idx) {
-  // quote looks like: {
-  //   artist: evt.target.id === "swift-button" ? "T-Swift" : "Yeezy",
-  //   text: evt.target.id === "swift-button" ? getRandomTaylorQuote() : getRandomKanyeQuote(),
-  // }
   let quoteCard = document.createElement("div")
   quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
   quoteCard.innerHTML =
@@ -74,4 +79,13 @@ function appendQuote(quote, idx) {
     <button class="btn delete-btn" id="delete-btn-${idx}">X</button>
   </footer>`
   cardContainer.appendChild(quoteCard)
+}
+
+function addDeleteBtnListeners() {
+  const deleteQuoteBtns = document.querySelectorAll(".delete-btn")
+  if(deleteQuoteBtns.length) {
+    deleteQuoteBtns.forEach(deleteQuoteBtn => {
+      deleteQuoteBtn.addEventListener("click", deleteQuote)
+    })
+  }
 }
