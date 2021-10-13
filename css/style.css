@@ -22,7 +22,7 @@ html {
 body {
   --body-bg: #8a8b9b;
   --btn-text-color: #2a2a2a;
-  --card-text-color: #3e3e3e;
+  --card-text-color: #e3e3e3;
   --header-bg: #007bbe;
   --header-text-color: #d8d8d8;
   --inverted-btn-text-color: #eaeaea;
@@ -41,7 +41,20 @@ body {
 }
 
 body.dark {
-  
+  --body-bg: #22232b;
+  --btn-text-color: #eaeaea;
+  --card-text-color: #dedede;
+  --header-bg: #005e9d;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #2a2a2a;
+  --light-dark-btn-bg: linear-gradient(to right top, #444655, #595b6b, #6f7181,
+    #868898, #9ea0b0, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
+  --light-dark-btn-content: "Light Mode";
+  --tay: linear-gradient(to right top, #560185, #6b0092, #7e009b, #89009b, 
+    #920097, #a7008b, #bd0281, #ac0064, #bd134f, #c52f39, #c54a22, #be6300);
+  --ye: linear-gradient(to right top, #213555, #213c59, #22425d, #254960,
+    #2a4f63, #264c61, #224860, #1e455e, #173757, #18294e, #1d1941, #210632);
+  background-color: var(--body-bg);
 }
 
 h1 {
@@ -51,6 +64,8 @@ h1 {
   margin: 1.2rem 0;
   padding: 1.2rem;
   font-family: var(--serif);
+  width: 100%;
+  text-align: center;
 }
 
 .btn {
@@ -66,6 +81,10 @@ h1 {
   margin-top: 30px;
   width: 85%;
   font-family: var(--serif);
+}
+
+.card-body {
+  color: var(--card-text-color)
 }
 
 .yeezy {
