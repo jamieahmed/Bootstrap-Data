@@ -1,0 +1,17 @@
+.yeezy {
+  background-color: #454654;
+  color: whitesmoke;
+}
+
+.t-swift {
+  background-color: #d0a617;
+  color: #050505;
+}
+
+.t-swift .artist-name {
+  color: #050505;
+}
+
+.yeezy .artist-name {
+  color: whitesmoke;
+}
