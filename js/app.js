@@ -29,6 +29,10 @@ const quotes = []
 const swiftBtn = document.querySelector("#swift-button")
 const yeezyBtn = document.querySelector("#yeezy-button")
 const cardContainer = document.querySelector("#card-container")
+const lightDarkBtn = document.querySelector("#light-dark-button")
+const body = document.querySelector("body")
+console.log(lightDarkBtn)
+console.log(body)
 
 /*----------------------------- Event Listeners -----------------------------*/
 

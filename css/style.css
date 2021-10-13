@@ -15,6 +15,8 @@ html {
    in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%;
+  --cursive: 'Dancing Script', cursive;
+  --serif: 'Playfair Display', serif;
 }
 
 body {
@@ -33,17 +35,21 @@ h1 {
   font-weight: 700;
   margin: 1.2rem 0;
   padding: 1.2rem;
+  font-family: var(--serif);
 }
 
 .btn {
   border: none;
   font-weight: 600;
   font-size: 2.4rem;
+  font-family: var(--cursive);
+  /* font-family: 'Dancing Script', cursive; */
 }
 
 .card {
   margin-top: 30px;
   width: 85%;
+  font-family: var(--serif);
 }
 
 .yeezy {
@@ -63,6 +69,10 @@ h1 {
 .card-footer {
   display: flex;
   justify-content: center;
+}
+
+.artist-name {
+  font-family: var(--cursive);
 }
 
 .t-swift .artist-name {
@@ -87,4 +97,11 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 325px;
+    margin: 30px 15px 0;
+  }
 }
