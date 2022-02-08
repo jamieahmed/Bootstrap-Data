@@ -31,6 +31,7 @@ const yeezyBtn = document.querySelector("#yeezy-button")
 const cardContainer = document.querySelector("#card-container")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
+const favicon = document.querySelector("#favicon")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -46,8 +47,14 @@ function createQuote(evt) {
     text: evt.target.id === "swift-button" ? getRandomTaylorQuote() : getRandomKanyeQuote(),
   }
   quotes.push(newQuote)
-  console.log(quotes)
+  changeFavicon(evt)
   render()
+}
+
+function changeFavicon(evt) {
+  evt.target.id === "swift-button" 
+    ? favicon.setAttribute("href", "/assets/taylor-favicon.png") 
+    : favicon.setAttribute("href", "/assets/ye-favicon.png")
 }
 
 function deleteQuote(evt) {
