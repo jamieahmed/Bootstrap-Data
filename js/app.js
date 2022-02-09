@@ -7,12 +7,12 @@
 // // Import the functions that will access the quote data
 // // Ensure the functions that we have built will work as intended.
 // // Tweak event listeners so that the quote is stored in a variable
-// TODO: Create a test card element with Bootstrap
-// TODO: Create a render function
-// TODO: Add a function to handle appending a card to the container element
-// TODO: Style each card differently, based on who the quote is from
-// TODO: Add a button to the card so that we can remove the quote from the array
-// TODO: When the delete button is clicked, remove the quote from the array
+// // Create a test card element with Bootstrap
+// // Create a render function
+// // Add a function to handle appending a card to the container element
+// // Style each card differently, based on who the quote is from
+// // Add a button to the card so that we can remove the quote from the array
+// // When the delete button is clicked, remove the quote from the array
 // TODO: Add responsive design
 // TODO: Add Google Fonts
 // TODO: Add the HTML for a Light/Dark Mode button.
@@ -83,12 +83,13 @@ function appendQuote(quote, idx) {
 }
 
 function deleteQuote(evt) {
-  console.log(evt.target.id)
+  const idx = evt.target.id.replace("delete-btn-", "")
+  quotes.splice(idx, 1)
+  render()
 }
 
 function addDeleteBtnListeners() {
   const deleteQuoteBtns = document.querySelectorAll(".delete-btn")
-  console.log(deleteQuoteBtns);
   // 0 is falsy, numbers other than 0 are truthy
   if(deleteQuoteBtns.length) {
     deleteQuoteBtns.forEach(deleteQuoteBtn => {
