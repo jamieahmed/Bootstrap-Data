@@ -6,7 +6,7 @@
 // // Write and export functions to access our quote data
 // // Import the functions that will access the quote data
 // // Ensure the functions that we have built will work as intended.
-// TODO: Tweak event listeners so that the quote is stored in a variable
+// // Tweak event listeners so that the quote is stored in a variable
 // TODO: Create a test card element with Bootstrap
 // TODO: Create a render function
 // TODO: Add a function to handle appending a card to the container element
@@ -35,22 +35,17 @@ const cardContainer = document.querySelector("#card-container")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-swiftBtn.addEventListener("click", () => {
-  const newTaylorQuote = {
-    artist: "T-Swift",
-    text: getRandomTaylorQuote()
-  }
-  quotes.push(newTaylorQuote)
-  console.log(quotes);
-})
-
-yeezyBtn.addEventListener("click", () => {
-  const newKanyeQuote = {
-    artist: "Kanye",
-    text: getRandomKanyeQuote()
-  }
-  quotes.push(newKanyeQuote)
-  console.log(quotes);
-})
+swiftBtn.addEventListener("click", createQuote)
+yeezyBtn.addEventListener("click", createQuote)
 
 /*-------------------------------- Functions --------------------------------*/
+
+function createQuote(evt) {
+  // isTaylor will be either true or false
+  const isTaylor = evt.target.id === "swift-button"
+  const newQuote = {
+    artist: isTaylor ? "T-Swift" : "Yeezy",
+    text: isTaylor ? getRandomTaylorQuote() : getRandomKanyeQuote()
+  }
+  quotes.push(newQuote)
+}
