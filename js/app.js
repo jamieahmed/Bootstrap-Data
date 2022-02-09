@@ -15,8 +15,8 @@
 // // When the delete button is clicked, remove the quote from the array
 // // Add responsive design
 // // Add Google Fonts
-// TODO: Add the HTML for a Light/Dark Mode button.
-// TODO: Add light/dark Mode
+// // Add the HTML for a Light/Dark Mode button.
+// // Add light/dark Mode
 // TODO: Add a favicon to our site
 
 /*-------------------------------- Constants --------------------------------*/
@@ -34,6 +34,7 @@ const yeezyBtn = document.querySelector("#yeezy-button")
 const cardContainer = document.querySelector("#card-container")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
+const favicon = document.querySelector("#favicon")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -51,7 +52,14 @@ function createQuote(evt) {
     text: isTaylor ? getRandomTaylorQuote() : getRandomKanyeQuote()
   }
   quotes.push(newQuote)
+  changeFavicon(isTaylor)
   render()
+}
+
+function changeFavicon(isTaylor) {
+  isTaylor 
+    ? favicon.setAttribute("href", "/assets/taylor-favicon.png")
+    : favicon.setAttribute("href", "/assets/ye-favicon.png")
 }
 
 function render() {
