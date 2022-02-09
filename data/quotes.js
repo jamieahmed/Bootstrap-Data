@@ -109,7 +109,7 @@ const taylorQuotes = [
   "There's more to life than dating the boy on the football team.",
   "If you're horrible to me, I'm going to write a song about it, and you won't like it. That's how I operate.",
   "Being FEARLESS isn't being 100% Not FEARFUL, it's being terrified but you jump anyway...",
-  "Giving up doesn't always mean your weak sometimes your just strong enough to let go.",
+  "Giving up doesn't always mean you're weak sometimes you're just strong enough to let go.",
   "I've wanted one thing for my whole life and I'm not going to be that girl who wants one thing her whole life then gets it and complains.",
   "Love is the one wild card.",
   "We should love, not fall in love, because everything that falls, gets broken.",
