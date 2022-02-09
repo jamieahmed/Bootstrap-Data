@@ -48,4 +48,32 @@ function createQuote(evt) {
     text: isTaylor ? getRandomTaylorQuote() : getRandomKanyeQuote()
   }
   quotes.push(newQuote)
+  render()
+}
+
+function render() {
+  cardContainer.innerHTML = ""
+  // quotes is an array of quote objects
+  quotes.forEach((quote) => {
+    // quote is an object with the shape of:
+    // { artist: "artist name", text: "quote" }
+    appendQuote(quote)
+  }) 
+}
+
+function appendQuote(quote) {
+  // quote is an object with the shape of:
+  // { artist: "artist name", text: "quote" }
+  let quoteCard = document.createElement("div")
+  quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
+  quoteCard.innerHTML =
+  `<div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>${quote.text}</p>
+      <footer class="blockquote-footer text-end artist-name">
+        ${quote.artist}
+      </footer>
+    </blockquote>
+  </div>`
+  cardContainer.appendChild(quoteCard)
 }
