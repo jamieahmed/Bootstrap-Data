@@ -1,7 +1,7 @@
-// TODO: Add the HTML for two buttons (one for T-Swift, one for Yeezy)
-// TODO: Add a container element for the card components to be appended to
-// TODO: Add cached element references for each of the buttons
-// TODO: Add a cached element reference for the container element in the JS file
+// // Add the HTML for two buttons (one for T-Swift, one for Yeezy)
+// // Add a container element for the card components to be appended to
+// // Add cached element references for each of the buttons
+// // Add a cached element reference for the container element in the JS file
 // TODO: Add event listeners to each of the buttons
 // TODO: Write and export functions to access our quote data
 // TODO: Import the functions that will access the quote data
@@ -29,10 +29,18 @@
 
 /*------------------------ Cached Element References ------------------------*/
 
-
+const swiftBtn = document.querySelector("#swift-button")
+const yeezyBtn = document.querySelector("#yeezy-button")
+const cardContainer = document.querySelector("#card-container")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+swiftBtn.addEventListener("click", () => {
+  console.log("Taylor is listening!")
+})
 
+yeezyBtn.addEventListener("click", () => {
+  console.log("Kanye is listening!")
+})
 
 /*-------------------------------- Functions --------------------------------*/
