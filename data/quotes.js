@@ -141,11 +141,11 @@ const taylorQuotes = [
 ]
 
 function getRandomKanyeQuote() {
-  return kanyeQuotes[Math.floor(Math.random() * (kanyeQuotes.length - 1))]
+  return kanyeQuotes[Math.floor(Math.random() * kanyeQuotes.length)]
 }
 
 function getRandomTaylorQuote() {
-  return taylorQuotes[Math.floor(Math.random() * (taylorQuotes.length - 1))]
+  return taylorQuotes[Math.floor(Math.random() * taylorQuotes.length)]
 }
 
 export {
