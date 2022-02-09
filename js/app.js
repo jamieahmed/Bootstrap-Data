@@ -13,8 +13,8 @@
 // // Style each card differently, based on who the quote is from
 // // Add a button to the card so that we can remove the quote from the array
 // // When the delete button is clicked, remove the quote from the array
-// TODO: Add responsive design
-// TODO: Add Google Fonts
+// // Add responsive design
+// // Add Google Fonts
 // TODO: Add the HTML for a Light/Dark Mode button.
 // TODO: Add light/dark Mode
 // TODO: Add a favicon to our site
@@ -32,11 +32,14 @@ const quotes = []
 const swiftBtn = document.querySelector("#swift-button")
 const yeezyBtn = document.querySelector("#yeezy-button")
 const cardContainer = document.querySelector("#card-container")
+const lightDarkBtn = document.querySelector("#light-dark-button")
+const body = document.querySelector("body")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", createQuote)
 yeezyBtn.addEventListener("click", createQuote)
+lightDarkBtn.addEventListener("click", toggleLightDark)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -97,3 +100,18 @@ function addDeleteBtnListeners() {
     })
   }
 }
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
+
+function checkDarkPref() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    body.className !== "dark"
+  ) {
+    toggleLightDark()
+  }
+}
+
+checkDarkPref()
