@@ -1,3 +1,53 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: gray;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  /* for most users this will display as 48px */
+  font-size: 4.8rem;
+  font-weight: 700;
+  /* for most users the margin will be 12px */
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+}
+
+.btn {
+  border: none;
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.card {
+  margin-top: 30px;
+  width: 85%;
+}
+
 .t-swift {
   background-color: #822A3E;
   color: whitesmoke;
@@ -12,6 +62,31 @@
   color: whitesmoke;
 }
 
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
 .delete-btn {
   color: white;
+}
+
+.blockquote {
+  font-size: 1.8rem;
+}
+
+.blockquote > footer {
+  font-size: 2.4rem;
+}
+
+.header-btn-container > .btn {
+  margin: 1.2rem;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
