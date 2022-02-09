@@ -3,9 +3,9 @@
 // // Add cached element references for each of the buttons
 // // Add a cached element reference for the container element in the JS file
 // // Add event listeners to each of the buttons
-// TODO: Write and export functions to access our quote data
-// TODO: Import the functions that will access the quote data
-// TODO: Ensure the functions that we have built will work as intended.
+// // Write and export functions to access our quote data
+// // Import the functions that will access the quote data
+// // Ensure the functions that we have built will work as intended.
 // TODO: Tweak event listeners so that the quote is stored in a variable
 // TODO: Create a test card element with Bootstrap
 // TODO: Create a render function
@@ -21,11 +21,11 @@
 
 /*-------------------------------- Constants --------------------------------*/
 
-
+import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes.js"
 
 /*-------------------------------- Variables --------------------------------*/
 
-
+const quotes = []
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -36,11 +36,21 @@ const cardContainer = document.querySelector("#card-container")
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", () => {
-  console.log("Taylor is listening!")
+  const newTaylorQuote = {
+    artist: "T-Swift",
+    text: getRandomTaylorQuote()
+  }
+  quotes.push(newTaylorQuote)
+  console.log(quotes);
 })
 
 yeezyBtn.addEventListener("click", () => {
-  console.log("Kanye is listening!")
+  const newKanyeQuote = {
+    artist: "Kanye",
+    text: getRandomKanyeQuote()
+  }
+  quotes.push(newKanyeQuote)
+  console.log(quotes);
 })
 
 /*-------------------------------- Functions --------------------------------*/
