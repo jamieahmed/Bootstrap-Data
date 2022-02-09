@@ -2,7 +2,7 @@
 // // Add a container element for the card components to be appended to
 // // Add cached element references for each of the buttons
 // // Add a cached element reference for the container element in the JS file
-// TODO: Add event listeners to each of the buttons
+// // Add event listeners to each of the buttons
 // TODO: Write and export functions to access our quote data
 // TODO: Import the functions that will access the quote data
 // TODO: Ensure the functions that we have built will work as intended.
@@ -16,8 +16,8 @@
 // TODO: Add responsive design
 // TODO: Add Google Fonts
 // TODO: Add the HTML for a Light/Dark Mode button.
-// TODO: Add Light/Dark Mode
-// TODO: Add a Favicon to our site
+// TODO: Add light/dark Mode
+// TODO: Add a favicon to our site
 
 /*-------------------------------- Constants --------------------------------*/
 

@@ -1,5 +1,3 @@
-
-
 const kanyeQuotes = [
   "2024",
   "All you have to be is yourself",
@@ -95,6 +93,7 @@ const kanyeQuotes = [
   "We've gotten comfortable with not having what we deserve",
   "Who made up the term major label in the first place???",
   "Winning is the only option"
+
 ]
 
 const taylorQuotes = [
@@ -140,3 +139,16 @@ const taylorQuotes = [
   "Some speak of an Armageddon; A time when humans will build machines they neither understand nor control. To myself I whisper, 'we already have'.",
   "Only the dead have seen the end of cyberwar."
 ]
+
+function getRandomKanyeQuote() {
+  return kanyeQuotes[Math.floor(Math.random() * (kanyeQuotes.length - 1))]
+}
+
+function getRandomTaylorQuote() {
+  return taylorQuotes[Math.floor(Math.random() * (taylorQuotes.length - 1))]
+}
+
+export {
+  getRandomKanyeQuote,
+  getRandomTaylorQuote
+}
