@@ -54,14 +54,15 @@ function createQuote(evt) {
 function render() {
   cardContainer.innerHTML = ""
   // quotes is an array of quote objects
-  quotes.forEach((quote) => {
+  quotes.forEach((quote, idx) => {
     // quote is an object with the shape of:
     // { artist: "artist name", text: "quote" }
-    appendQuote(quote)
-  }) 
+    appendQuote(quote, idx)
+  })
+  addDeleteBtnListeners()
 }
 
-function appendQuote(quote) {
+function appendQuote(quote, idx) {
   // quote is an object with the shape of:
   // { artist: "artist name", text: "quote" }
   let quoteCard = document.createElement("div")
@@ -74,6 +75,24 @@ function appendQuote(quote) {
         ${quote.artist}
       </footer>
     </blockquote>
-  </div>`
+  </div>
+  <footer class="card-footer">
+    <button class="btn delete-btn" id="delete-btn-${idx}">X</button>
+  </footer>`
   cardContainer.appendChild(quoteCard)
+}
+
+function deleteQuote(evt) {
+  console.log(evt.target.id)
+}
+
+function addDeleteBtnListeners() {
+  const deleteQuoteBtns = document.querySelectorAll(".delete-btn")
+  console.log(deleteQuoteBtns);
+  // 0 is falsy, numbers other than 0 are truthy
+  if(deleteQuoteBtns.length) {
+    deleteQuoteBtns.forEach(deleteQuoteBtn => {
+      deleteQuoteBtn.addEventListener("click", deleteQuote)
+    })
+  }
 }
