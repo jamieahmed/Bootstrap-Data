@@ -15,6 +15,8 @@ html {
    in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%;
+  --cursive: 'Dancing Script', cursive;
+  --serif: 'Playfair Display', serif;
 }
 
 body {
@@ -35,6 +37,10 @@ h1 {
   /* for most users the margin will be 12px */
   margin: 1.2rem 0;
   padding: 1.2rem;
+  /* this  */
+  font-family: 'Playfair Display', serif;
+  /* is equal to */
+  font-family: var(--serif);
 }
 
 .btn {
@@ -89,4 +95,11 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 325px;
+    margin: 30px 15px 0;
+  }
 }
