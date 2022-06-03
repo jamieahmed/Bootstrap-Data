@@ -1,5 +1,3 @@
-
-
 const kanyeQuotes = [
   "2024",
   "All you have to be is yourself",
