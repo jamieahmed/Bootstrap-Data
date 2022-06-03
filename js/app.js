@@ -49,5 +49,27 @@ function createQuote(evt) {
     text: isTaylor ? getRandomTaylorQuote() : getRandomKanyeQuote()
   }
   quotes.push(newQuote)
-  console.log(quotes)
+  render()
+}
+
+function render() {
+  cardContainer.innerHTML = ""
+  quotes.forEach((quote) => {
+    appendQuote(quote)
+  })
+}
+
+function appendQuote(quote) {
+  let quoteCard = document.createElement("div")
+  quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
+  quoteCard.innerHTML =
+  `<div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>${quote.text}</p>
+      <footer class="blockquote-footer text-end artist-name">
+        ${quote.artist}
+      </footer>
+    </blockquote>
+  </div>`
+  cardContainer.appendChild(quoteCard)
 }
