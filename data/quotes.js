@@ -138,3 +138,16 @@ const taylorQuotes = [
   "Some speak of an Armageddon; A time when humans will build machines they neither understand nor control. To myself I whisper, 'we already have'.",
   "Only the dead have seen the end of cyberwar."
 ]
+
+function getRandomKanyeQuote() {
+  return kanyeQuotes[Math.floor(Math.random() * kanyeQuotes.length)]
+}
+
+function getRandomTaylorQuote() {
+  return taylorQuotes[Math.floor(Math.random() * taylorQuotes.length)]
+}
+
+export {
+  getRandomKanyeQuote,
+  getRandomTaylorQuote
+}
