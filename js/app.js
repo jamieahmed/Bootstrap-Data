@@ -50,16 +50,18 @@ function createQuote(evt) {
   }
   quotes.push(newQuote)
   render()
+  console.log(quotes)
 }
 
 function render() {
   cardContainer.innerHTML = ""
-  quotes.forEach((quote) => {
-    appendQuote(quote)
+  quotes.forEach((quote, idx) => {
+    appendQuote(quote, idx)
   })
+  addDeleteBtnListeners()
 }
 
-function appendQuote(quote) {
+function appendQuote(quote, idx) {
   let quoteCard = document.createElement("div")
   quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
   quoteCard.innerHTML =
@@ -70,6 +72,24 @@ function appendQuote(quote) {
         ${quote.artist}
       </footer>
     </blockquote>
-  </div>`
+  </div>
+  <footer class="card-footer">
+    <button class="btn delete-btn" id="delete-btn-${idx}">X</button>
+  </footer>`
   cardContainer.appendChild(quoteCard)
+}
+
+function deleteQuote(evt) {
+  const idx = evt.target.id.replace("delete-btn-", "")
+  quotes.splice(idx, 1)
+  render()
+}
+
+function addDeleteBtnListeners(params) {
+  const deleteQuoteBtns = document.querySelectorAll(".delete-btn")
+  if(deleteQuoteBtns.length) {
+    deleteQuoteBtns.forEach(deleteQuoteBtn => {
+      deleteQuoteBtn.addEventListener("click", deleteQuote)
+    })
+  }
 }
