@@ -33,12 +33,15 @@ const quotes = []
 const swiftBtn = document.querySelector("#swift-button")
 const yeezyBtn = document.querySelector("#yeezy-button")
 const cardContainer = document.querySelector("#card-container")
+const lightDarkBtn = document.querySelector("#light-dark-button")
+const body = document.querySelector("body")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", createQuote)
 yeezyBtn.addEventListener("click", createQuote)
+lightDarkBtn.addEventListener("click", toggleLightDark)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -93,3 +96,18 @@ function addDeleteBtnListeners(params) {
     })
   }
 }
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
+
+function checkDarkPref() {
+  if(
+    window.matchMedia("(prefers-color-scheme:dark)").matches && 
+    body.className !== "dark"
+  ) {
+    toggleLightDark()
+  }
+}
+
+checkDarkPref()
